@@ -277,3 +277,6 @@ for i in obj:
     out_li.append(sen)
 
 print(out_li)
+
+
+# 20.
