@@ -45,4 +45,64 @@ interpreter convert bytecode to machine code(computer processor can understand)
 8) Generators?
 
 
+9) GIL? (global interpreter lock)
+
+- Preventing multiple native threads from executing Python bytecodes at once
+- Only one thread can execute python a time
+- It can impact multithreading programs by limiting parallelism
+
+10) constructor? (__init__)
+
+- constructor is a special method that is automatically called when an object is created.
+The purpose of a constructor is to initialize the attributes (properties) of the object
+
+11) py2 vs py3?
+
+
+12) unicode, encode, decode?
+
+
+13) Thread pool and Thread pool executor?
+
+Thread Pool:
+
+- A group of ready-to-use threads that are kept in reserve to do tasks when needed.
+- Think of it like having a team of workers waiting to perform various jobs.
+
+ThreadPoolExecutor:
+
+- In Python, this is a specific tool (a class) that helps you manage and use a thread pool.
+- It's like a manager for your team of workers (threads), helping you assign tasks, keep track of their progress,
+  and make sure things run smoothly.
+
+
+14) multi threading vs multiprocessing?
+
+Multithreading:
+
+Idea: Imagine you're a chef in a kitchen, and you have multiple assistants (threads) helping you.
+
+Note: In some kitchens (like Python's default interpreter CPython), there's a rule that only one person can use the
+      main chopping board at a time (Global Interpreter Lock or GIL).
+
+Multiprocessing:
+
+Idea: Picture having multiple independent kitchens (processes), each with its own chef.
+     They can work on different recipes simultaneously.
+
+Note: Each kitchen has its own set of tools (memory), so chefs (processes) don't accidentally mess with each other's ingredients.
+
+
+- multithreading is like having multiple helpers in the same kitchen, and multiprocessing is like having entirely
+ separate kitchens with their own chefs.
+
+
+15) Thread Lock?
+
+- Imagine you have a shared toy, and many kids (threads) want to play with it at the same time.
+- A thread lock is like a rule that only one kid can play with the toy at any given moment.
+- If another kid (thread) is already playing (holds the lock), the new kid has to wait until the toy is free.
+- a thread lock ensures that only one thread can access a shared resource or code section at a time, avoiding conflicts
+  and ensuring things stay in order.
+
 """

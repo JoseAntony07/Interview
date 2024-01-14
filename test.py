@@ -96,3 +96,17 @@ interpreter convert bytecode to machine code(computer processor can understand)
 -> global - cycle of script file/import package  
 -> built in - exception and etc
 """
+
+
+mul_ = lambda a, b: a * b
+
+print(mul_(2, 3))
+
+my_list_ = [1, 2, 3, 4]
+
+res = list(map(lambda a: a ** 2, my_list_))
+print(res)
+
+names = ["Alice", "Bob", "Charlie"]
+res_ = list(map(str.upper, names))
+print(res_)

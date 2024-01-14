@@ -196,3 +196,84 @@ print(new_list)
 
 
 # 14. Merge two sorted array
+
+
+# 15. otp - a3b5c3a3
+from itertools import groupby
+
+
+def compress_string(inp_str):
+    out_str = ""
+
+    for char, group in groupby(inp_str):
+        out_str += char + str(len(list(group)))
+
+    return out_str
+
+
+input_str = "aaabbbbbcccaaa"
+output = compress_string(input_str)
+print(output)
+
+
+# 16.
+"""
+output - 
+
+Rank of Virat is 1
+Rank of Rahul is 2
+Rank of Rohit is 3
+"""
+# total_marks = {student: sum(mark.values()) for student, mark in s.items()}
+# print(total_marks)
+#
+# order_students = sorted(total_marks.keys(), key=lambda student: total_marks[student], reverse=True)
+# print(order_students)
+#
+# order_by_rank = {student: rank + 1 for rank, student in enumerate(order_students)}
+# print(order_by_rank)
+#
+# for student in order_by_rank:
+#     print(f"Rank of {student} is {order_by_rank[student]}")
+
+
+# 17. Find Kth Largest Element in an Array
+
+def find_kth_largest(nums, k):
+    return sorted(nums)[-k]
+
+
+# 18. missing number
+
+def missing_number(n):
+    numbers = set(n)
+    out_put = []
+
+    for i in range(1, n[-1]):
+        if i not in numbers:
+            out_put.append(i)
+
+    return out_put
+
+
+input_numbers = [0, 1, 3, 4, 5]
+result = missing_number(input_numbers)
+print(f"The missing number is: {result}")
+
+
+# 19. output should be - ['Gfg', 'Best', 'Reading CS']
+
+import re
+
+str_1 = "‘<b>Gfg</b> is <b>Best</b>. I love <b>Reading CS</b> from it.’"   # tag = “b”
+
+
+obj = re.findall(r"<b>.*?</b>",  str_1)
+
+out_li = []
+for i in obj:
+    print(type(i).__dict__)
+    sen = i.replace('<b>', "").replace('</b>', "")
+    out_li.append(sen)
+
+print(out_li)
