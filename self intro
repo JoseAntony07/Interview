@@ -1,0 +1,21 @@
+I'm Jose Antony, based in Chennai, with over 3 years of experience as a Python developer.
+ During this time, I have successfully contributed to three distinct projects.
+
+Project: Fyxt
+
+Fyxt is a comprehensive property management system designed to facilitate seamless communication between property
+ owners, tenants, and vendors. The platform streamlines issue resolution, such as plumbing concerns, by utilizing
+ a ticketing system. In this project, I implemented the multi-tenant concept, replica mail behavior, chat functionality,
+  ticket management, and service planning.
+
+Project: Marlo
+
+Marlo focuses on providing loan products, particularly for ship owners. It extends its services to non-ship owners as
+ well, allowing them to apply for loans related to their voyage processes. The project incorporates features like
+  vessel tracking and loan application management using technologies such as CRM, Django, GraphQL, and PostgreSQL.
+
+Project: Kauvery Kare Application
+
+The Kauvery Kare Application serves as the official app for Kauvery Hospital, offering patients a seamless experience
+ for booking both online and offline appointments, video calling, master health checkups, and managing health records.
+  This microservices project employs technologies like FastAPI, Django, Kafka, and integrates various third-party tools.
