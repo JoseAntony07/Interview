@@ -105,4 +105,95 @@ Note: Each kitchen has its own set of tools (memory), so chefs (processes) don't
 - a thread lock ensures that only one thread can access a shared resource or code section at a time, avoiding conflicts
   and ensuring things stay in order.
 
+
+16) What is Python, and why is it used?
+
+- Python is a high-level, interpreted programming language that is widely used for web development, scientific
+  computing, data analysis, artificial intelligence.
+- Python’s extensive library and community support make it a versatile language suitable for a wide range of applications.
+
+
+17) Explain the difference between a list and a tuple in Python?
+
+- In Python, a list and a tuple are both used to store a collection of values
+- A list is mutable, which means you can add, remove, or modify elements after creating the list.
+  A tuple, on the other hand, is immutable, meaning you cannot modify its contents once it has been created.
+
+tuple ex:  a pair of latitude and longitude coordinates representing a location.
+
+
+18) How can python be an interpreted language?
+
+- Python is an interpreted language because it is executed directly by the interpreter, without the need for compilation.
+- The Python interpreter reads each line of code in a program and translates it to machine code or bytecode.
+
+
+19) What is the Dogpile effect?
+
+- Imagine you have a shelf with cookies, and people can take cookies from this shelf.
+You want to make sure that the cookies on the shelf are always fresh.
+
+Fresh Cookies (Cache) - Initially, you have a plate of fresh cookies on the shelf.
+
+Taking Cookies (Requests) - People come and take cookies from the shelf. As long as there are cookies, everyone is happy.
+
+Empty Plate (Cache Miss) - Eventually, the plate becomes empty, and you need to put new cookies on it.
+
+First Person (First Request) - The first person notices the empty plate, so they go to the kitchen, bake new cookies,
+                               and put them on the plate.
+
+Other People (Subsequent Requests) - While the first person is baking, other people also see the empty plate and decide
+                                     to bake new cookies themselves.
+
+Simultaneous Baking (Simultaneous Recalculation) - Now, multiple people are in the kitchen baking cookies at the
+                                                   same time, not realizing that the first person is already doing it.
+
+
+- So, the "Dogpile effect" is like a situation where everyone sees an empty plate, decides to bake new cookies
+  simultaneously, creating a bit of chaos and inefficiency in the process.
+
+- In the world of computer systems, this relates to multiple requests trying to update or recalculate the same
+  information in a cache at the same time, causing some inefficiencies. Strategies are used to manage this situation
+  and ensure a smoother process.
+
+
+20) What is PYTHONPATH in python??
+
+- PYTHONPATH is an environment variable in Python that tells the interpreter where to look for modules and packages
+  when you execute a script or run a Python program.
+
+
+21) Why zip() function is used?
+
+- The zip() function in Python is used to combine elements from two or more iterable objects (such as lists, tuples, or strings) into tuples.
+- It creates an iterator that generates tuples containing elements.
+
+names = ['Alice', 'Bob', 'Charlie']
+ages = [25, 30, 22]
+
+# zip
+paired_data = zip(names, ages)
+print(paired_data)  # <zip object at 0x7fb3d82e64c0>  (iterator object)
+
+list_data = list(paired_data)
+print(list_data)  # [('Alice', 25), ('Bob', 30), ('Charlie', 22)]
+
+dict_data = dict(paired_data)
+print(dict_data)   # {'Alice': 25, 'Bob': 30, 'Charlie': 22}
+
+
+# unzip
+name, age = zip(*list_data)
+print(name)  # ('Alice', 'Bob', 'Charlie')
+
+
+name, age = zip(*dict_data.items())
+print(age)  # (25, 30, 22)
+
+
+22) What is PEP 8, and why is it important?
+
+- PEP 8 stands for "Python Enhancement Proposal 8." It is a style guide for writing clean, readable, and consistent
+  Python code. The primary goal of PEP 8 is to improve the readability of code.
+
 """
