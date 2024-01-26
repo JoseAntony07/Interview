@@ -322,3 +322,138 @@ my_list = [2, 3, 4, 5]  # output - [4,3,2]
 
 print(my_list[2::-1])
 
+
+# 22. given values for x,y and an array A of size N.print the value that are in between x and y?
+
+def values_in_range(arr, x, y):
+    result = [element for element in arr if x <= element <= y]
+    return result
+
+# Example usage:
+arr = [1, 5, 3, 8, 12, 7, 15, 6]
+x = 4
+y = 10
+
+result = values_in_range(arr, x, y)
+print("Values in the range [{}, {}]: {}".format(x, y, result))
+
+
+# 23. given an array A, find the sum of elements present in specified gap N inputs?
+
+def sum_in_gaps(arr, gap):
+    result = 0
+
+    for i in range(0, len(arr), gap):
+        result += arr[i]
+
+    return result
+
+# Example usage:
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+gap = 2
+
+result = sum_in_gaps(arr, gap)
+print("Sum of elements in specified gaps of size", gap, ":", result)
+
+
+# 24. input - a1b5c2a3, output - abbbbbccaaa
+
+import re
+
+def transform_string(input_str):
+    result = ''
+    pattern = re.compile(r'([a-zA-Z])(\d*)')
+
+    matches = pattern.findall(input_str)
+
+    for char, count in matches:
+        count = int(count) if count else 1
+        result += char * count
+
+    return result
+
+# Example usage:
+input_str = 'a1b5c2a3'
+output_str = transform_string(input_str)
+print("Transformed string:", output_str)
+
+
+# 25. Train ticket booking system
+
+class Train:
+    def __init__(self, train_id, name, source, destination, capacity):
+        self.train_id = train_id
+        self.name = name
+        self.source = source
+        self.destination = destination
+        self.capacity = capacity
+        self.booked_seats = 0
+
+    def check_availability(self):
+        return self.capacity - self.booked_seats
+
+    def book_tickets(self, num_tickets):
+        available_seats = self.check_availability()
+
+        if num_tickets <= available_seats:
+            self.booked_seats += num_tickets
+            print(f"Booking successful for {num_tickets} seats in {self.name}")
+            return True
+        else:
+            print(f"Sorry, only {available_seats} seats available in {self.name}")
+            return False
+
+
+class BookingSystem:
+    def __init__(self):
+        self.trains = {}
+
+    def add_train(self, train):
+        self.trains[train.train_id] = train
+
+    def book_tickets(self, train_id, num_tickets):
+        if train_id in self.trains:
+            return self.trains[train_id].book_tickets(num_tickets)
+        else:
+            print("Invalid Train ID")
+            return False
+
+
+# Example usage:
+if __name__ == "__main__":
+    # Creating Train objects
+    train1 = Train(1, "Express1", "CityA", "CityB", 100)
+    train2 = Train(2, "Express2", "CityB", "CityC", 80)
+
+    # Creating BookingSystem object
+    booking_system = BookingSystem()
+
+    # Adding trains to the system
+    booking_system.add_train(train1)
+    booking_system.add_train(train2)
+
+    # Booking tickets
+    booking_system.book_tickets(1, 50)
+    booking_system.book_tickets(2, 30)
+    booking_system.book_tickets(1, 70)  # Attempt to book more seats than available
+
+
+# 26. print the maximum number of characters present in between the two same characters?
+
+def max_chars_between_same(input_str):
+    max_distance = 0
+    char_positions = {}
+
+    for i, char in enumerate(input_str):
+        if char in char_positions:
+            distance = i - char_positions[char] - 1
+            max_distance = max(max_distance, distance)
+
+        char_positions[char] = i
+
+    return max_distance
+
+# Example usage:
+input_str = 'abcdbce'
+result = max_chars_between_same(input_str)
+print("Maximum number of characters between the same characters:", result)
