@@ -478,3 +478,49 @@ ans -
  ORDER BY amount DESC
  LIMIT 1 OFFSET 1;
 """
+
+
+# 28. return array of elements which less than the right element higher than the left element
+
+arr = [5, 1, 4, 3, 6, 8, 10, 7, 9]
+
+output = []
+
+for i in range(1, len(arr)-1):
+    left = arr[i-1]
+    val = arr[i]
+    right = arr[i+1]
+
+    if left < val < right:
+        output.append([left, val, right])
+
+print(output)
+
+
+# 29. Triplets with zero sum
+
+def find_triplets_with_zero_sum(arr):
+    n = len(arr)
+    result = []
+
+    for i in range(n - 2):
+        seen = set()
+        target_sum = -arr[i]
+
+        for j in range(i + 1, n):
+            complement = target_sum - arr[j]
+
+            if complement in seen:
+                result.append([arr[i], complement, arr[j]])
+
+            seen.add(arr[j])
+
+    return result
+
+arr = [0, -1, 2, -3, 1]
+triplets = find_triplets_with_zero_sum(arr)
+
+if triplets:
+    print("Triplets with zero sum:", triplets)
+else:
+    print("No triplets with zero sum found.")
