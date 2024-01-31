@@ -10,3 +10,13 @@
 - https://refactoring.guru/design-patterns/python
 - https://www.youtube.com/watch?v=cE3jy92IbBw
 - https://www.youtube.com/watch?v=50Wa2moVWGQ&list=PL_9uM5be2amq4-wN6817RMw1qX3OMYJhC
+
+
+## Important topics
+
+- data type(list, dict, set, tuple) related program questions
+- data structure and algorithm 
+- solid design principles
+- design pattern
+- system design
+- db design

@@ -457,3 +457,24 @@ def max_chars_between_same(input_str):
 input_str = 'abcdbce'
 result = max_chars_between_same(input_str)
 print("Maximum number of characters between the same characters:", result)
+
+
+# 27. second-largest amount
+
+"""
+Orders
+
+order_id	item	   amount	customer_id
+1	        Keyboard	400	     4
+2	        Mouse	    300	     4
+3	        Monitor	    12000	 3
+4	        Keyboard	400	     1
+5	        Mousepad	250	     2
+
+ans - 
+
+ SELECT item, amount
+ FROM Orders
+ ORDER BY amount DESC
+ LIMIT 1 OFFSET 1;
+"""
