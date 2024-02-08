@@ -196,4 +196,57 @@ print(age)  # (25, 30, 22)
 - PEP 8 stands for "Python Enhancement Proposal 8." It is a style guide for writing clean, readable, and consistent
   Python code. The primary goal of PEP 8 is to improve the readability of code.
 
+
+23) Context Manager in Python?
+
+- In any programming language, the usage of resources like file operations or database connections is very common.
+  But these resources are limited in supply. Therefore, the main problem lies in making sure to release these resources
+  after usage. If they are not released then it will lead to resource leakage and may cause the system to either slow
+  down or crash. It would be very helpful if users have a mechanism for the automatic setup and teardown of resources.
+  In Python, it can be achieved by the usage of context managers which facilitate the proper handling of resources.
+
+i)
+
+with open("test.txt") as f:     # it will open and close the operation
+    data = f.read()
+
+ii)
+
+class ContextManager():
+    def __init__(self):
+        print('init method called')
+
+    def __enter__(self):
+        print('enter method called')
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        print('exit method called')
+
+with ContextManager() as manager:
+    print('with statement block')
+
+otp -
+
+init method called
+enter method called
+with statement block
+exit method called
+
+iii) the yield statement is used to define the point at which the code inside the with block will be executed.
+     This is a way to create a lightweight generator-based context manager.
+
+from contextlib import contextmanager
+
+@contextmanager
+def my_context_manager():
+    print("Entering the context")
+    yield  # This is where the block of code inside the 'with' statement is executed
+    print("Exiting the context")
+
+# Using the context manager
+with my_context_manager():
+    print("Inside the context")
+    print(2+6)
+
 """
