@@ -302,7 +302,6 @@ def multiply_odd_numbers(a, b):
 result = multiply_odd_numbers(3, 5)
 print(result)
 
-
 # 21. list, tuple, set, dict based operation
 
 # (i)
@@ -329,6 +328,7 @@ def values_in_range(arr, x, y):
     result = [element for element in arr if x <= element <= y]
     return result
 
+
 # Example usage:
 arr = [1, 5, 3, 8, 12, 7, 15, 6]
 x = 4
@@ -348,6 +348,7 @@ def sum_in_gaps(arr, gap):
 
     return result
 
+
 # Example usage:
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 gap = 2
@@ -355,10 +356,10 @@ gap = 2
 result = sum_in_gaps(arr, gap)
 print("Sum of elements in specified gaps of size", gap, ":", result)
 
-
 # 24. input - a1b5c2a3, output - abbbbbccaaa
 
 import re
+
 
 def transform_string(input_str):
     result = ''
@@ -371,6 +372,7 @@ def transform_string(input_str):
         result += char * count
 
     return result
+
 
 # Example usage:
 input_str = 'a1b5c2a3'
@@ -453,11 +455,11 @@ def max_chars_between_same(input_str):
 
     return max_distance
 
+
 # Example usage:
 input_str = 'abcdbce'
 result = max_chars_between_same(input_str)
 print("Maximum number of characters between the same characters:", result)
-
 
 # 27. second-largest amount
 
@@ -479,17 +481,16 @@ ans -
  LIMIT 1 OFFSET 1;
 """
 
-
 # 28. return array of elements which less than the right element higher than the left element
 
 arr = [5, 1, 4, 3, 6, 8, 10, 7, 9]
 
 output = []
 
-for i in range(1, len(arr)-1):
-    left = arr[i-1]
+for i in range(1, len(arr) - 1):
+    left = arr[i - 1]
     val = arr[i]
-    right = arr[i+1]
+    right = arr[i + 1]
 
     if left < val < right:
         output.append([left, val, right])
@@ -516,6 +517,7 @@ def find_triplets_with_zero_sum(arr):
             seen.add(arr[j])
 
     return result
+
 
 arr = [0, -1, 2, -3, 1]
 triplets = find_triplets_with_zero_sum(arr)
